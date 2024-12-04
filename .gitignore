@@ -3,4 +3,12 @@
 .vs/ProjectSettings.json
 /.vs
 
+
 virtualstore/.env
+virtualstore/.firebase/hosting.dmlydHVhbHN0b3Jl.cache
+virtualstore/apphosting.yaml
+virtualstore/.firebaserc
+virtualstore/virtualstore/index.html
+virtualstore/virtualstore/404.html
+virtualstore/storage.rules
+virtualstore/firebase.json

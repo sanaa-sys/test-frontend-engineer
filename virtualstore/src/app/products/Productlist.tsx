@@ -41,7 +41,7 @@ function RatingStars({ rating }: { rating: number }) {
     );
 }
 
-export default function ProductList({ products }: { products: Product[] }) {
+export default function Productlist({ products }: { products: Product[] }) {
     const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
     const { cart, setCart } = useAppContext();
     const handleAddToCart = (product: Product) => {
