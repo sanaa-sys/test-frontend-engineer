@@ -1,16 +1,19 @@
+import { NextPage } from 'next'; // Use NextPage for better typing  
 import { getProducts } from '../../lib/getProducts';
 import Productlist from './Productlist';
 import Pagination from './Pagination';
 import HeaderTop from "@/components/Header";
 
-interface ProductsPageProps {
-    searchParams: {
-        page: string;
-        category?: string;
-    };
+interface SearchParams {
+    page: string;
+    category?: string;
 }
 
-export default async function ProductsPage({ searchParams }: ProductsPageProps) {
+interface ProductsPageProps {
+    searchParams: SearchParams;
+}
+
+const ProductsPage: NextPage<ProductsPageProps> = async ({ searchParams }) => {
     const page = Number(searchParams.page) || 1;
     const category = searchParams.category || "";
 
@@ -25,4 +28,6 @@ export default async function ProductsPage({ searchParams }: ProductsPageProps) 
             <Pagination totalPages={totalPages} currentPage={currentPage} />
         </div>
     );
-}
+};
+
+export default ProductsPage;
