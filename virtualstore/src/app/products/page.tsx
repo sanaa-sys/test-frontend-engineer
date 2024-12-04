@@ -1,5 +1,5 @@
 import { getProducts } from '../../lib/getProducts';
-import ProductList from './Productlist';
+import Productlist from './Productlist';
 import Pagination from './Pagination';
 import HeaderTop from "@/components/Header";
 export default async function ProductsPage({
@@ -17,7 +17,7 @@ export default async function ProductsPage({
             <HeaderTop />
             <br />
             <h1 className="text-3xl font-bold mb-8">Our Products</h1>
-            <ProductList products={products} />
+            <Productlist products={products} />
             <Pagination totalPages={totalPages} currentPage={currentPage} />
         </div>
     );
