@@ -8,6 +8,7 @@ import { toast } from 'react-toastify'
 import { useState } from "react";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from '@/components/ui/dialog';
 import { Star, StarHalf, X } from 'lucide-react';
+import { useAppContext } from "../context/AppContext";
 import "react-toastify/dist/ReactToastify.css";
 interface Product {
     id: number
@@ -17,7 +18,7 @@ interface Product {
 }
 
 export default function FeaturedProducts({ products }: { products: Product[] }) {
-
+    const { cart, setCart } = useAppContext();
     function RatingStars({ rating }: { rating: number }) {
         const fullStars = Math.floor(rating);
         const hasHalfStar = rating % 1 >= 0.5;
@@ -38,14 +39,15 @@ export default function FeaturedProducts({ products }: { products: Product[] }) 
     }
     const handleAddToCart = (product: Product) => {
         // TODO: Implement actual add to cart functionality
-        toast.success(`${product.title} added to cart!`, {
-            position: "bottom-right",
-            autoClose: 3000,
-            hideProgressBar: false,
-            closeOnClick: true,
-            pauseOnHover: true,
-            draggable: true,
-        });
+        const existingProduct = cart.find((item) => item.id === product.id);
+        let quantity = 1;
+
+        if (existingProduct) {
+            quantity = existingProduct.quantity + 1;
+        }
+
+        setCart([...cart, { ...product, quantity }]);
+        alert(`Product added to cart!`);
     };
     const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
 

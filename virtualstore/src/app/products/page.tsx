@@ -5,10 +5,11 @@ import HeaderTop from "@/components/Header";
 export default async function ProductsPage({
     searchParams,
 }: {
-    searchParams: { page: string };
+        searchParams: { page: string; category?: string };
 }) {
     const page = Number(searchParams.page) || 1;
-    const { products, totalPages, currentPage } = await getProducts(page);
+    const category = searchParams.category || "";
+    const { products, totalPages, currentPage } = await getProducts(page, 10,category);
 
     return (
 
