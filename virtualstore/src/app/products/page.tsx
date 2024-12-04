@@ -1,5 +1,5 @@
 import { getProducts } from '../../lib/getProducts';
-import ProductList from './ProductList';
+import ProductList from './Productlist';
 import Pagination from './Pagination';
 import HeaderTop from "@/components/Header";
 export default async function ProductsPage({
