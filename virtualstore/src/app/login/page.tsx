@@ -8,7 +8,7 @@ import { Button } from "@/components/ui/button";
 import { useRouter } from "next/navigation";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import GoogleAuth from "@/components/GoogleAuth";
+
 import React from "react";
 import { useAppContext } from "../../context/AppContext";
 import { motion } from "framer-motion"; // Import framer-motion
@@ -69,7 +69,7 @@ const Login: React.FC = () => {
                 >
                     <div className="mx-auto grid w-[350px] gap-6">
                         <div className="grid gap-2 text-center">
-                            <h1 className="text-xl font-bold">Welcome to Virtual Mall</h1>
+                            <h1 className="text-xl font-bold">Welcome to Virtual Store</h1>
                             <h1 className="text-xl font-bold">Login</h1>
                             <p className="text-muted-foreground">
                                 Enter your email below to login to your account
@@ -111,7 +111,7 @@ const Login: React.FC = () => {
                                 {loading ? "Logging in..." : "Login"}
                             </Button>
                         </div>
-                        <GoogleAuth mode="Log In" />
+                  
                         <div className="mt-4 text-center text-sm">
                             Don&apos;t have an account?{" "}
                             <Link href="/" className="underline">

@@ -8,7 +8,7 @@ import { useCreateUserWithEmailAndPassword } from "react-firebase-hooks/auth";
 import { auth } from "../lib/firebase"; // Adjust path to your firebase config
 import "./globals.css";
 import { useAppContext } from "../context/AppContext";
-import GoogleAuth from "@/components/GoogleAuth";
+
 import { motion } from "framer-motion"; // Import framer-motion
 
 const Home: React.FC = () => {
@@ -29,7 +29,7 @@ const Home: React.FC = () => {
         try {
             await createUserWithEmailAndPassword(userEmail, password);
             alert("User created successfully!");
-            router.push("/login");
+            router.push("/home");
         } catch (error: any) {
             if (error.code === "auth/weak-password") {
                 alert("Password is too weak. Please use a stronger password.");
@@ -110,23 +110,15 @@ const Home: React.FC = () => {
                             {loading ? "Signing Up..." : "Sign Up"}
                         </Button>
                     </div>
-                    <GoogleAuth mode="Sign Up" />
+             
                     <div className="mt-4 text-center text-sm">
                         Already have an account?{" "}
                         <Link href="/login" className="underline">
                             Log in
                         </Link>
                     </div>
-                    {error && (
-                        <motion.div
-                            className="error-notification"
-                            initial={{ opacity: 0 }}
-                            animate={{ opacity: 1 }}
-                            transition={{ duration: 0.5 }}
-                        >
-                            {error.message}
-                        </motion.div>
-                    )}
+                    
+               
                 </div>
             </motion.div>
         </div>
