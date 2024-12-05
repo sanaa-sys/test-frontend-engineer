@@ -6,7 +6,7 @@ import { Card, CardContent, CardFooter, CardHeader, CardTitle } from '@/componen
 import { Button } from '@/components/ui/button';
 import { Star, StarHalf, X } from 'lucide-react';
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from '@/components/ui/dialog';
-import { toast } from 'react-toastify';
+
 import { useAppContext } from "../../context/AppContext";
 import "react-toastify/dist/ReactToastify.css";
 interface Product {

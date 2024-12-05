@@ -8,7 +8,11 @@ interface SearchParams {
     category?: string;
 }
 
-export default async function ProductsPage({ searchParams }: { searchParams: SearchParams }) {
+interface ProductsPageProps {
+    searchParams: SearchParams;
+}
+
+export default async function ProductsPage({ searchParams }: ProductsPageProps) {
     const page = searchParams.page ? Number(searchParams.page) : 1;
     const category = searchParams.category || "";
 
@@ -24,3 +28,4 @@ export default async function ProductsPage({ searchParams }: { searchParams: Sea
         </div>
     );
 }
+
