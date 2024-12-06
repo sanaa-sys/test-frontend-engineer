@@ -33,12 +33,10 @@ Implemented authentication with email usinf Firebase to make the app secure
 Responsive Design:
 
 The UI is built with Tailwind CSS using ShadcnUI, ensuring responsiveness and adaptability across devices.
-Assumptions:
+Tradeoffs and Assumptions:
 
 All users have valid email addresses in the AppContext.
 Payment processing and email sending simulate real-world behavior but are not integrated with actual payment gateways.
-
-Tradeoffs and Assumptions:
 Could not add pages like user profile and terms and conditions pages which would be needed in ideal world
 Assumed three product categories as per data from fake store api
 Assumed 2 payment modes only with limited options.
